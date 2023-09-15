@@ -1,0 +1,65 @@
+// Body
+$body-bg: #F9F9F9;
+
+// Typography
+$font-family-sans-serif: 'Futura PT', sans-serif;
+$font-size-base: 1.125rem;
+$line-height-base: 1.6;
+
+$primary: #2F2222;
+$secondary: #5D71DD;
+$secondary_light: #F7F8FD;
+$secondary_semi: #7D8DE4;
+$gray: #F9F9F9;
+$gray_semi: rgba(47, 34, 34, 0.60);
+$gray_light: rgba(47, 34, 34, 0.40);
+$gray_border: rgba(47, 34, 34, 0.10);
+$white: #fff;
+$shadow: rgba(8, 24, 111, 0.20);
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "secondary-light": $secondary_light
+);
+
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+
+$btn-padding-y: 13px;
+$btn-padding-x: 13px;
+$btn-border-radius: 1.25rem;
+$btn-border-width: none;
+$btn-color: $white !important;
+$btn-bg: $secondary;
+
+
+$input-padding-y: 13px;
+$input-padding-x: 30px;
+$input-bg: $gray;
+$input-border-width: none;
+$input-border-radius: 1.25rem;
+$input-btn-focus-box-shadow: none;
+
+
+$card-bg: $white;
+$card-border-radius: 20px;
+$card-border-width: 0;
+
+$badge-font-size: 1rem;
+$badge-color: $secondary;
+$badge-padding-y: 8px;
+$badge-padding-x: 16px;
+$badge-border-radius: 8px;
+$badge-font-weight:  400;
+
+
+

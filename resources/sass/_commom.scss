@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    color: $primary;
+    font-weight: 400;
+}
+button{
+
+    &:hover{
+        color: $white!important;
+    }
+}
+
+input{
+
+    &:focus{
+        background-color: $secondary_light!important;
+    }
+}
+.card{
+    padding: 48px 40px;
+
+}
+.date{
+    color: $gray_light;
+}
+a{
+    text-decoration: none;
+}

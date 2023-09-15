@@ -1,0 +1,43 @@
+#right_blocks{
+    h3{
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+    .items{
+        margin-bottom: 40px;
+
+        .item{
+            display: block;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid $gray_border;
+
+            &:last-child{
+                border: none;
+            }
+            &:hover{
+                p{
+                    color: $secondary;
+                }
+            }
+            p{
+                margin-bottom: 10px;
+            }
+
+        }
+    }
+    .subscribe_form{
+        padding: 40px 30px 50px 30px;
+        background-color: $white;
+        border-radius: 20px;
+
+        h4{
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+        }
+    }
+}

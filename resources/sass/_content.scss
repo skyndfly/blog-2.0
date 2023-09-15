@@ -1,0 +1,107 @@
+section.content {
+    background-color: $gray;
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    .articles {
+        .card {
+            display: block;
+            transition: .3s;
+            margin-bottom: 40px;
+
+            &:hover {
+                box-shadow: 4px 8px 40px 0px $shadow;
+
+            }
+
+            h4 {
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 20px;
+
+            }
+
+            p {
+                color: $gray_light;
+            }
+
+            .card-head {
+                font-size: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+            .badge{
+                transition: .3s;
+            }
+            .card-body {
+                padding: 0;
+            }
+        }
+
+        .card-background {
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+
+            &:before{
+                content: '';
+                z-index: 0;
+                background-color: $secondary;
+                width: 700px;
+                height: 700px;
+                position: absolute;
+                right: -100px;
+                bottom: -100px;
+                border-radius: 100%;
+                transition: .5s;
+            }
+            &:hover{
+                background-color: $white;
+                &:before{
+                    width: 200px;
+                    height: 200px;
+                }
+                .badge {
+                    background-color: $secondary_light!important;
+                    color: $secondary!important;
+                }
+
+                .card-body {
+                    color: $white;
+                    h4{
+                        color: $primary;
+                    }
+                    span {
+                        color: $gray_light!important;
+                    }
+                }
+            }
+            .badge {
+                background-color: $secondary_semi !important;
+                color: $white !important;
+            }
+            .card-head{
+                z-index: 1;
+                position: relative;
+            }
+
+            .card-body {
+                color: $white;
+                z-index: 1;
+                h4{
+                    position: relative;
+                    transition: .5s;
+                }
+                span {
+                    position: absolute;
+                    left: 30px;
+                    bottom: 40px;
+                    color: $white!important;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,43 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
+@import "commom";
+@import "nav_index";
+@import "header";
+@import "auth_form";
+@import "content";
+@import "blocs/right";
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('/fonts/FuturaPTExtraBold.otf') format('openType');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('/fonts/FuturaPTMedium.otf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('/fonts/FuturaPT-Book.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('/fonts/FuturaPTLight.otf') format('openType');
+    font-weight: 100;
+    font-style: normal;
+}
+
