@@ -12,31 +12,20 @@ class SiteController extends Controller
 {
     public function __invoke(): View
     {
+        Cache::forget('articles');
         $articles = Cache::rememberForever('articles', function () {
             return Article::query()
                 ->where('status', Article::STATUS_PUBLISHED)
                 ->with('category.parentCategory')
                 ->orderByRaw('created_at DESC')
+                ->take(6)
                 ->get();
         });
+
 
         return view('index', ['articles' => $articles]);
     }
 
-    private function checkForNewArticles(): bool
-    {
-        $latestId = Article::max('id');
-        $cacheKey = 'articles_latest_id';
-        $cachedLatestId = Cache::get($cacheKey);
 
-        if ($cachedLatestId && $latestId <= $cachedLatestId) {
-            // Нет новых записей
-            return false;
-        }
-
-        Cache::put($cacheKey, $latestId);
-        // Есть новые записи
-        return true;
-    }
 
 }
