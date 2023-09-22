@@ -12,8 +12,8 @@ class SiteController extends Controller
 {
     public function __invoke(): View
     {
-        Cache::forget('articles');
-        $articles = Cache::rememberForever('articles', function () {
+        Cache::forget('article');// TODO удалить
+        $articles = Cache::rememberForever('article', function () {
             return Article::query()
                 ->where('status', Article::STATUS_PUBLISHED)
                 ->with('category.parentCategory')

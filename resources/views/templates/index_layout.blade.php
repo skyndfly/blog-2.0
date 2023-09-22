@@ -8,6 +8,24 @@
     @vite('resources/js/app.js')
 </head>
 <body>
-    @yield('content')
+<div id="preloader">
+    <div class="spinner"></div>
+</div>
+@include('nav.index_nav')
+<header></header>
+<section class="content">
+    <div class="container">
+        <div class="content_content">
+            <div class="row">
+                <div class="col-md-9">
+                    @yield('content')
+                </div>
+                @include('blocs.right')
+            </div>
+
+        </div>
+    </div>
+</section>
+
 </body>
 </html>

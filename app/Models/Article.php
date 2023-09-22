@@ -30,10 +30,12 @@ class Article extends Model
         parent::boot();
         static::created(function () {
             Cache::forget('articles'); // Сбросить кэш при создании новой записи
+            Cache::forget('article'); // Сбросить кэш при создании новой записи
         });
 
         static::updated(function () {
             Cache::forget('articles'); // Сбросить кэш при обновлении записи
+            Cache::forget('article'); // Сбросить кэш при обновлении записи
 
         });
     }

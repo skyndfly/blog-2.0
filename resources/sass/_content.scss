@@ -6,7 +6,7 @@ section.content {
     .articles {
         .card {
             display: block;
-            transition: .3s;
+            transition: box-shadow .3s;
             margin-bottom: 40px;
 
             &:hover {
@@ -33,7 +33,7 @@ section.content {
                 margin-bottom: 30px;
             }
             .badge{
-                transition: .3s;
+                transition: background-color .3s;
             }
             .card-body {
                 padding: 0;
