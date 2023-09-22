@@ -12,6 +12,8 @@ class SiteController extends Controller
 {
     public function __invoke(): View
     {
+        $left_article = 1;//в какой позиции выводить новость с левой катигорией
+        $right_article = 3;//в какой позиции выводить новость с правой катигорией
         Cache::forget('article');// TODO удалить
         $articles = Cache::rememberForever('article', function () {
             return Article::query()
@@ -23,9 +25,12 @@ class SiteController extends Controller
         });
 
 
-        return view('index', ['articles' => $articles]);
+        return view('index', [
+            'articles' => $articles,
+            'left_article' => $left_article,
+            'right_article' => $right_article
+        ]);
     }
-
 
 
 }

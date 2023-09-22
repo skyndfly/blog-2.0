@@ -1,10 +1,7 @@
 @extends('templates.index_layout')
 
 @section('title', 'Главная')
-@php
-    $left_article = 1;
-    $right_article = 3;
-@endphp
+
 
 @section('content')
     {{ Breadcrumbs::render('index') }}
