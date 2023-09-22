@@ -5,7 +5,9 @@
     $left_article = 1;
     $right_article = 3;
 @endphp
+
 @section('content')
+    {{ Breadcrumbs::render('index') }}
 
     <div class="articles col-12">
         @for($i = 0; $i < count($articles); $i++)

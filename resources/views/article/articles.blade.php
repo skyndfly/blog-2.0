@@ -3,6 +3,7 @@
 @section('title', 'Главная')
 
 @section('content')
+    {{ Breadcrumbs::render('articles') }}
 
     <div class="articles col-12">
         @foreach($articles as $article)
