@@ -1,29 +1,28 @@
 <?php // routes/breadcrumbs.php
 
 
+use App\Models\Category;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 use App\Models\Article;
 
 
-Breadcrumbs::for('post', function (BreadcrumbTrail $trail, Article $article) {
-    $trail->parent('articles');
-    $trail->push($article->title, route('post', $article));
-});
 
-// Home
+// Index
 Breadcrumbs::for('index', function (BreadcrumbTrail $trail) {
     $trail->push('Главная', route('index'));
 });
 
-// Home > Blog
+// Index > Articles
 Breadcrumbs::for('articles', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
-    $trail->push('Статьи', route('index'));
+    $trail->push('Статьи', route('articles.index'));
 });
 
-// Home > Blog > [Category]
-Breadcrumbs::for('category', function (BreadcrumbTrail $trail, $category) {
-    $trail->parent('blog');
-    $trail->push($category->title, route('category', $category));
+// Home > Category > Article
+Breadcrumbs::for('articles.show', function (BreadcrumbTrail $trail, Category $category,Article $article) {
+    $trail->push('Главная', route('index'));
+    $trail->push($category->name, route('articles.index'));
+    $trail->push($article->title, route('articles.show', $article));
 });
+
