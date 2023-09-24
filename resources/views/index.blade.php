@@ -10,7 +10,7 @@
         @for($i = 0; $i < count($articles); $i++)
             @if($i !== $left_article && $i !== $right_article)
                 <div class="row long_article">
-                    <a href="" class="card">
+                    <a href="{{ route('articles.show',$articles[$i]->id) }}" class="card">
                         <div class="card-head">
                             <div class="category">
                                 @if( $articles[$i]->category->parentCategory)
@@ -44,7 +44,7 @@
             @if($i === $left_article)
                 <div class="row">
                     <div class="col-md-8 flex-column">
-                        <a href="" class="card flex-grow-1">
+                        <a href="{{ route('articles.show',$articles[$i]->id) }}" class="card flex-grow-1">
                             <div class="card-head">
                                 <div class="category">
                                     @if( $articles[$i]->category->parentCategory)
@@ -83,7 +83,7 @@
                 <div class="row ">
                     <x-category-block link="" category="{{ $articles[$i]->category->name }}"></x-category-block>
                     <div class="col-md-8 flex-column">
-                        <a href="" class="card flex-grow-1">
+                        <a href="{{ route('articles.show',$articles[$i]->id) }}" class="card flex-grow-1">
                             <div class="card-head">
                                 <div class="category">
                                     @if( $articles[$i]->category->parentCategory)

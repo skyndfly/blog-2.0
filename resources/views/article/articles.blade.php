@@ -8,7 +8,7 @@
     <div class="articles col-12">
         @foreach($articles as $article)
             <div class="row long_article">
-                <a href="" class="card">
+                <a href="{{ route('articles.show',$article->id) }}" class="card">
                     <div class="card-head">
                         <div class="category">
                             @if( $article->category->parentCategory)

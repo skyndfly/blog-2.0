@@ -14,6 +14,8 @@ class Article extends Model
     use SoftDeletes;
     const STATUS_PUBLISHED = true;
     const STATUS_NOT_PUBLISHED = false;
+
+    const POST_TO_SHOW = 6;
     protected $fillable = [
         'title',
         'text',

@@ -2,25 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
+use App\ReadRepository\ArticleReadRepository;
 
 class ArticleController extends Controller
 {
-    public function show_all():View
+    /**
+     * @var ArticleReadRepository
+     */
+    protected ArticleReadRepository $repository;
+
+    public function __construct(ArticleReadRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    public function show_all_limit():View
     {
         Cache::forget('articles');// TODO удалить
         $articles = Cache::rememberForever('articles', function () {
-            return Article::query()
-                ->where('status', Article::STATUS_PUBLISHED)
-                ->with('category.parentCategory')
-                ->orderByRaw('created_at DESC')
-                ->paginate(6);
+            return $this->repository->getPublishedAllPaginate();
         });
 
 
         return view('article.articles', ['articles' => $articles]);
+    }
+
+    public function show(int $id): View
+    {
+        $model = $this->repository->getPublishedById($id);
+
+        return view('article.show', ['model' => $model]);
     }
 }
