@@ -2,7 +2,7 @@
 
 @section('title', $model->title)
 
-@section('article-head-image', false)
+
 
 @section('content')
     {{ Breadcrumbs::render('articles.show', $model->category, $model) }}

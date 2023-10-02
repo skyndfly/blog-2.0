@@ -7,7 +7,6 @@ use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 use App\Models\Article;
 
 
-
 // Index
 Breadcrumbs::for('index', function (BreadcrumbTrail $trail) {
     $trail->push('Главная', route('index'));
@@ -20,9 +19,14 @@ Breadcrumbs::for('articles', function (BreadcrumbTrail $trail) {
 });
 
 // Home > Category > Article
-Breadcrumbs::for('articles.show', function (BreadcrumbTrail $trail, Category $category,Article $article) {
+Breadcrumbs::for('articles.show', function (BreadcrumbTrail $trail, Category $category, Article $article) {
     $trail->push('Главная', route('index'));
     $trail->push($category->name, route('articles.index'));
     $trail->push($article->title, route('articles.show', $article));
 });
 
+// Home > Login
+Breadcrumbs::for('login', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push('Авторизация', route('login'));
+});

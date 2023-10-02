@@ -9,7 +9,7 @@
                 <a href="">О нас</a>
                 <a href="">Контакты</a>
                 <a href="">Поиск</a>
-                <a href="">
+                <a href="{{ route('login') }}">
                     <i class="bi bi-person-fill"></i>
                     Войти
                 </a>
