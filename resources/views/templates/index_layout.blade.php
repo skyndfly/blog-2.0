@@ -14,10 +14,14 @@
 @include('nav.index_nav')
 
 <header></header>
+
 <section class="content">
     <div class="container">
 
         <div class="content_content">
+
+
+
             <div class="row">
                 <div class="col-md-9">
                     @yield('content')

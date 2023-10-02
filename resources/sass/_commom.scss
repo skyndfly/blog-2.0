@@ -9,7 +9,13 @@
         color: $white!important;
     }
 }
-
+.btn-sm{
+    transition: color .3s, background-color .3s;
+    &:hover{
+        color: $white!important;
+        background-color: $secondary_semi!important;
+    }
+}
 input{
 
     &:focus{
@@ -26,7 +32,4 @@ input{
 a{
     text-decoration: none;
 }
-.badge {
-    background-color: $secondary_semi!important;
-    color: $white!important;
-}
+
