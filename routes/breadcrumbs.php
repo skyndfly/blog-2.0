@@ -30,3 +30,9 @@ Breadcrumbs::for('login', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
     $trail->push('Авторизация', route('login'));
 });
+
+// Home > Register
+Breadcrumbs::for('register', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push('Создать аккаунт', route('register'));
+});

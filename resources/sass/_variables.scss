@@ -11,6 +11,7 @@ $secondary: #5D71DD;
 $secondary_light: #F7F8FD;
 $secondary_semi: #7D8DE4;
 $gray: #F9F9F9;
+$gray_semi1: #F5F5F5;
 $gray_semi: rgba(47, 34, 34, 0.60);
 $gray_light: rgba(47, 34, 34, 0.40);
 $gray_border: rgba(47, 34, 34, 0.10);
@@ -19,13 +20,13 @@ $btn_sm_bg: rgba(93, 113, 221, 0.05);
 
 $white: #fff;
 $shadow: rgba(8, 24, 111, 0.20);
+$form-shadow: 4px 8px 40px 0px rgba(8, 24, 111, 0.20);
 
 $theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
     "secondary-light": $secondary_light,
     "secondary-sm": $btn_sm_bg,
-
 );
 
 
@@ -51,7 +52,6 @@ $btn-padding-x-sm: 16px;
 $btn-border-radius-sm: 0.5rem;
 
 
-
 $input-padding-y: 13px;
 $input-padding-x: 30px;
 $input-bg: $gray;
@@ -59,6 +59,13 @@ $input-border-width: none;
 $input-border-radius: 1.25rem;
 $input-btn-focus-box-shadow: none;
 
+$form-check-input-checked-color: $secondary;
+$form-check-input-checked-bg-color: $white;
+$form-check-input-bg: $white;
+$form-check-input-border: none;
+$form-check-input-border-radius: .25em;
+$form-check-radio-border-radius: 50%;
+$form-check-input-focus-box-shadow: none;
 
 $card-bg: $white;
 $card-border-radius: 20px;
