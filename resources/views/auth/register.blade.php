@@ -8,19 +8,29 @@
     {{ Breadcrumbs::render('register') }}
 
     <div class="col-12" id="auth">
-        <form action="">
+        <form action="{{route('register')}}" method="POST">
             <h1>Создать аккаунт</h1>
+            @csrf
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="name@example.com">
+                <input name="email" value="{{ old('email') }}" type="email" class="form-control" placeholder="name@example.com">
+                @error('email')
+                    <div class="text-danger mt-1">{{$message}}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Пароль</label>
-                <input class="form-control" type="password">
+                <input name="password" class="form-control" type="password">
+                @error('password')
+                <div class="text-danger mt-1">{{$message}}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Повторите пароль</label>
-                <input class="form-control" type="password">
+                <input name="password_confirmation" class="form-control" type="password">
+                @error('password_confirmation')
+                <div class="text-danger mt-1">{{$message}}</div>
+                @enderror
             </div>
             <div class="mb-3 d-flex align-items-center justify-content-between">
                 <div class="form-check">

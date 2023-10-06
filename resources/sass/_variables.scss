@@ -21,12 +21,13 @@ $btn_sm_bg: rgba(93, 113, 221, 0.05);
 $white: #fff;
 $shadow: rgba(8, 24, 111, 0.20);
 $form-shadow: 4px 8px 40px 0px rgba(8, 24, 111, 0.20);
-
+$danger: #c0392b;
 $theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
     "secondary-light": $secondary_light,
     "secondary-sm": $btn_sm_bg,
+    "danger": $danger,
 );
 
 
