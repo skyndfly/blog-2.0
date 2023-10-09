@@ -16,6 +16,7 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
+
     public function store(RegisterRequest $request): RedirectResponse
     {
         User::query()->create([

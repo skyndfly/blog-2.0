@@ -8,19 +8,24 @@
     {{ Breadcrumbs::render('login') }}
 
     <div class="col-12" id="auth">
-        <form action="">
+        <form action="{{ route('auth') }}" method="POST">
+            @csrf
             <h1>Войти</h1>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="name@example.com">
+                <input name="email" value="{{ old('email') }}" type="email" class="form-control"
+                       placeholder="name@example.com">
             </div>
+            @error('email')
+            <div class="text-danger mt-1">{{$message}}</div>
+            @enderror
             <div class="mb-3">
                 <label class="form-label">Пароль</label>
-                <input class="form-control" type="password">
+                <input name="password" class="form-control" type="password">
             </div>
             <div class="mb-3 d-flex align-items-center justify-content-between">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input name="remember" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Запомнить?
                     </label>
