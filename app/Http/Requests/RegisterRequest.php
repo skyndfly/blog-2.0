@@ -26,6 +26,7 @@ class RegisterRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email:dns', Rule::unique("users")],
             'password' => ['required', 'confirmed', Password::min(4)->letters()->mixedCase()->numbers()->uncompromised()],
+            'policy' => ['accepted'],
         ];
     }
 }

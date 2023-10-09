@@ -19,10 +19,13 @@ class RegisterController extends Controller
 
     public function store(RegisterRequest $request): RedirectResponse
     {
-        User::query()->create([
-            'email' => $request->get('email'),
-            'password' => Hash::make($request->get('password')),
-        ]);
+        if ($request->policy) {
+            User::query()->create([
+                'email' => $request->get('email'),
+                'password' => Hash::make($request->get('password')),
+            ]);
+        }
+
         return redirect()->route('login');
     }
 }

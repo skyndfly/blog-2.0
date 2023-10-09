@@ -34,7 +34,7 @@
             </div>
             <div class="mb-3 d-flex align-items-center justify-content-between">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input name="policy" class="form-check-input" type="checkbox" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Согласен с
                         <a href="" class="text-secondary">условия пользования</a>
@@ -49,6 +49,9 @@
                     </label>
                 </div>
             </div>
+            @error('policy')
+            <div class="text-danger mt-1 mb-3">{{$message}}</div>
+            @enderror
             <div class="mb-3">
                 <button type="submit" class="btn btn-secondary ">Создать аккаунт</button>
             </div>
