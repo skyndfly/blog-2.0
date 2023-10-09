@@ -1,19 +1,23 @@
-nav#nav{
+nav#nav {
     padding: 24px 0;
-    .nav_content{
+
+    .nav_content {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    #logo{
+
+    #logo {
         width: 50px;
         height: 48px;
     }
-    .right{
+
+    .right {
         display: flex;
         gap: 40px;
         align-items: center;
-        a{
+
+        a {
             color: $primary;
             text-decoration: none;
             display: flex;
@@ -22,7 +26,7 @@ nav#nav{
             position: relative;
             font-size: 18px;
 
-            &::before{
+            &::before {
                 content: "";
                 width: 0;
                 height: 1px;
@@ -32,18 +36,70 @@ nav#nav{
                 background-color: $secondary;
                 transition: .3s;
             }
-            i{
+
+            i {
                 color: $secondary;
             }
-            &:hover{
+
+            &:hover {
                 color: $secondary;
-                &::before{
+
+                &::before {
                     width: 100%;
                 }
             }
         }
-        .contact_number{
+
+        .contact_number {
             color: $secondary;
+        }
+
+        .drop {
+            position: relative;
+            &:hover{
+                .drop_menu{
+                    display: block;
+                }
+            }
+
+            .drop_menu {
+                display: none;
+                padding: 15px 10px;
+                width: 200%;
+                background-color: $white;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                border-radius: 0 0 20px 20px;
+                color: $primary;
+
+                .drop_item {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    padding: 3px 0;
+                    &::before {
+                        display: none;
+                    }
+                    &:hover {
+                        background: $secondary_light;
+
+                        button {
+                            background: $secondary_light;
+                        }
+                    }
+                }
+
+                i {
+                    color: $secondary;
+                }
+
+                button {
+
+                    border: none;
+                    background-color: $white;
+                }
+            }
         }
     }
 

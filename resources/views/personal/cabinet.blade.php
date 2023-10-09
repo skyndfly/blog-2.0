@@ -11,11 +11,7 @@
         <h1>Личный кабинет</h1>
         <h2> {{ $model->email }}</h2>
 
-        <form action="{{ route('exit') }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Выйти</button>
-        </form>
+
     </div>
 
 @endsection

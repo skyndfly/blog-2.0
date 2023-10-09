@@ -10,15 +10,37 @@
                 <a href="">Контакты</a>
                 <a href="">Поиск</a>
                 @auth
-                    <a href="{{ route('cabinet', auth()->user()) }}">
-                        <i class="bi bi-person-fill"></i>
-                        Профиль
-                    </a>
+                    <div class="drop">
+                        <a href="{{ route('cabinet', auth()->user()) }}">
+                            <i class="bi bi-person-fill"></i>
+                            Профиль
+                        </a>
+                        <div class="drop_menu">
+                            <a class="drop_item" href="{{ route('cabinet', auth()->user()) }}">
+                                <i class="bi bi-person-fill"></i>
+                                Личный кабинет
+                            </a>
+                            <a class="drop_item" href="">
+                                <i class="bi bi-sliders"></i>
+                                Настройки
+                            </a>
+
+                            <form class="drop_item" action="{{ route('exit') }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">
+                                    <i class="bi bi-door-closed-fill"></i>
+                                    Выйти
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 @elseguest
                     <a href="{{ route('login') }}">
                         <i class="bi bi-person-fill"></i>
                         Войти
                     </a>
+
                 @endauth
                 <a class="contact_number" href="tel:+79888954553">
                     <i class="bi bi-telephone-fill"></i>

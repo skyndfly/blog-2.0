@@ -56,6 +56,18 @@
                 </svg>
             </a>
         </div>
+        <div id="comments">
+            Комментарии - 48
+            @guest
+                <div class="access-denied">
+                    <a href="{{ route('login') }}">Войдите</a> в свой аккаунт, чтобы открыть доступ
+                </div>
+            @elseauth
+                Коментарии
+{{--                 TODO: Вывести коментарии--}}
+
+            @endguest
+        </div>
     </div>
 
 @endsection
