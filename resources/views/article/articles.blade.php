@@ -19,7 +19,7 @@
                                 class="badge bg-secondary-light">{{ $article->category->name}}</span>
                         </div>
                         <span
-                            class="date">{{$article->created_at->formatLocalized('%e %b %Y | %H:%M')}}</span>
+                            class="date">{{ $article->created_at->formatLocalized('%e ') }} @lang('month.' . $article->created_at->formatLocalized('%B')) {{ $article->created_at->formatLocalized(' %Y | %H:%M') }}</span>
                     </div>
                     <div class="card-body">
                         <h4>

@@ -13,7 +13,7 @@
         </div>
         <div class="category d-flex gap-3 align-items-center">
             <span class="badge bg-secondary-light">{{ $model->category->name }}</span>
-            <span class="date">{{$model->created_at->formatLocalized('%e %b %Y | %H:%M')}}</span>
+            <span class="date">{{ $model->created_at->formatLocalized('%e ') }} @lang('month.' . $model->created_at->formatLocalized('%B')) {{ $model->created_at->formatLocalized(' %Y | %H:%M') }}</span>
         </div>
         <h1 class="title">
             {{ $model->title }}
