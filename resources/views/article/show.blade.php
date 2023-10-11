@@ -2,8 +2,6 @@
 
 @section('title', $model->title)
 
-
-
 @section('content')
     {{ Breadcrumbs::render('articles.show', $model->category, $model) }}
 

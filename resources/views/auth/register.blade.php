@@ -1,6 +1,6 @@
 @extends('templates.secondary_index_layout')
 
-@section('title', "Войти")
+@section('title', "Создать аккаунт")
 
 
 
@@ -43,12 +43,15 @@
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="check_news">
+                    <input name="newsletter"  class="form-check-input" type="checkbox" id="check_news">
                     <label class="form-check-label" for="check_news">
                         Подписаться на рассылку
                     </label>
                 </div>
             </div>
+            @error('newsletter')
+            <div class="text-danger mt-1 mb-3">{{$message}}</div>
+            @enderror
             @error('policy')
             <div class="text-danger mt-1 mb-3">{{$message}}</div>
             @enderror
