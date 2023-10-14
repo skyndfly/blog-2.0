@@ -11,11 +11,16 @@
                 <a href="">Поиск</a>
                 @auth
                     <div class="drop">
+
                         <a href="{{ route('cabinet', auth()->user()) }}">
                             <i class="bi bi-person-fill"></i>
                             Профиль
                         </a>
                         <div class="drop_menu">
+                            <span class="drop_item">
+                                <i class="bi bi-envelope-at-fill"></i>
+                                {{ auth()->user()->email }}
+                            </span>
                             <a class="drop_item" href="{{ route('cabinet', auth()->user()) }}">
                                 <i class="bi bi-person-fill"></i>
                                 Личный кабинет
@@ -29,7 +34,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">
-                                    <i class="bi bi-door-closed-fill"></i>
+                                    <i class="bi bi-x-square-fill"></i>
                                     Выйти
                                 </button>
                             </form>

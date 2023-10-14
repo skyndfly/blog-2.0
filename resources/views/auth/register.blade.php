@@ -34,6 +34,7 @@
             </div>
             <div class="mb-3 d-flex align-items-center justify-content-between">
                 <div class="form-check">
+
                     <input name="policy" class="form-check-input" type="checkbox" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Согласен с
@@ -43,7 +44,8 @@
                     </label>
                 </div>
                 <div class="form-check">
-                    <input name="newsletter"  class="form-check-input" type="checkbox" id="check_news">
+                    <input type="hidden" value="0" name="newsletter_check">
+                    <input name="newsletter" value="1" class="form-check-input" type="checkbox" id="check_news">
                     <label class="form-check-label" for="check_news">
                         Подписаться на рассылку
                     </label>
