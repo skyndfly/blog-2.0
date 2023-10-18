@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class LoginController extends Controller
@@ -22,6 +22,7 @@ class LoginController extends Controller
                  'email' => 'Не правильный логин/пароль'
              ]);
          }//добавить true
+
         return view('personal.cabinet', ['model' => auth()->user()]);
     }
 }

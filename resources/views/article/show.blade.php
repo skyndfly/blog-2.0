@@ -55,10 +55,12 @@
             </a>
         </div>
         <div id="comments">
-            Комментарии - 48
+            <h4 class="comments-count d-flex justify-content-center p-3">
+                Комментарии - 48
+            </h4>
             @guest
-                <div class="access-denied">
-                    <a href="{{ route('login') }}">Войдите</a> в свой аккаунт, чтобы открыть доступ
+                <div class="access-denied ">
+                    <a href="{{ route('login') }}" class="text-secondary">Войдите</a> в свой аккаунт, чтобы открыть доступ
                 </div>
             @elseauth
                 Коментарии

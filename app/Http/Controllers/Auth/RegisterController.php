@@ -31,7 +31,7 @@ class RegisterController extends Controller
     {
         $user = $this->repository->create($request);
         auth()->login($user);
-
-        return redirect()->route('login');
+        $request->session()->flash('success','Поздравляем с регистрацией на сайте!');
+        return redirect()->route('index');
     }
 }
