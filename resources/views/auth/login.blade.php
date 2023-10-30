@@ -30,7 +30,7 @@
                         Запомнить?
                     </label>
                 </div>
-                <a href="" class="text-secondary">Забыли пароль?</a>
+                <a href="{{ route('password.request') }}" class="text-secondary">Забыли пароль?</a>
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-secondary ">Войти</button>

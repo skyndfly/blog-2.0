@@ -14,7 +14,11 @@
 @include('nav.index_nav')
 
 <header></header>
-
+@if(session('success'))
+    <div id="success-message" class="alert alert-secondary" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
 <section class="content">
     <div class="container">
 

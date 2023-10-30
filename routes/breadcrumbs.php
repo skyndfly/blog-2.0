@@ -1,4 +1,5 @@
-<?php // routes/breadcrumbs.php
+<?php
+// routes/breadcrumbs.php
 
 
 use App\Models\Category;
@@ -29,6 +30,18 @@ Breadcrumbs::for('articles.show', function (BreadcrumbTrail $trail, Category $ca
 Breadcrumbs::for('login', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
     $trail->push('Авторизация', route('login'));
+});
+
+// Home > Forgot
+Breadcrumbs::for('password.request', function (BreadcrumbTrail $trail) {
+    $trail->parent('login');
+    $trail->push('Восстановить пароль', route('password.request'));
+});
+
+// Home > Reset
+Breadcrumbs::for('password.reset', function (BreadcrumbTrail $trail) {
+    $trail->parent('login');
+    $trail->push('Сбросить пароль', route('password.reset'));
 });
 
 // Home > Register

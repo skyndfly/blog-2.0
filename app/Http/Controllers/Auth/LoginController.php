@@ -21,7 +21,7 @@ class LoginController extends Controller
              return  back()->withErrors([
                  'email' => 'Не правильный логин/пароль'
              ]);
-         }//добавить true
+         }
 
         return view('personal.cabinet', ['model' => auth()->user()]);
     }
