@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordEmailSendRequest;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
+use App\Mail\Auth\ForgotPassword;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
+
+
 
 class ForgotController extends Controller
 {
@@ -18,13 +19,10 @@ class ForgotController extends Controller
         return view('auth.forgot');
     }
 
-    public function email(PasswordEmailSendRequest $request): RedirectResponse
+    public function email(PasswordEmailSendRequest $request)
     {
-        $status =  Password::sendResetLink($request->only('email'));
+        Mail::to($request->validated()['email'])->send(new ForgotPassword());
 
-        return $status === Password::RESET_LINK_SENT
-            ? back()->with(['status' => __($status)])
-            : back()->withErrors(['email' => __($status)]);
     }
 
     public function showReset (string $token): View
